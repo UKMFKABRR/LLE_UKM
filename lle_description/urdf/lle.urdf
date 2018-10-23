@@ -1,0 +1,483 @@
+<robot
+  name="lle">
+<link name="odom"/>
+<joint name="joint_base" type="fixed">
+    <parent link="odom"/>
+    <child link="base_link"/>
+</joint>
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.169236439571242 -0.250539374031157 0.182434244918651"
+        rpy="0 0 0" />
+      <mass
+        value="0.478425130329681" />
+      <inertia
+        ixx="0.00301717973628494"
+        ixy="-3.18755438710738E-17"
+        ixz="-6.24500451351651E-17"
+        iyy="0.0176625083227497"
+        iyz="-0.000444787144430361"
+        izz="0.015853003043962" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://lle_description/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://lle_description/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="left_femur">
+    <inertial>
+      <origin
+        xyz="0.18156 -0.0064043 0.4327"
+        rpy="0 0 0" />
+      <mass
+        value="0.29439" />
+      <inertia
+        ixx="0.0001284"
+        ixy="0.00019812"
+        ixz="-6.4243E-05"
+        iyy="0.0057373"
+        iyz="2.2662E-06"
+        izz="0.0058564" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://lle_description/meshes/left_femur.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://lle_description/meshes/left_femur.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="j_hip_l"
+    type="revolute">
+    <origin
+      xyz="-0.0407635604287585 -0.258877551691931 0.0426744558009468"
+      rpy="-1.5707963267949 1.39428159791336 -1.5707963267949" />
+    <parent
+      link="base_link" />
+    <child
+      link="left_femur" />
+    <axis
+      xyz="0 0 1" />
+<limit effort="30" velocity="1.0" lower="-2" upper="2" />
+  </joint>
+  <link
+    name="left_leg">
+    <inertial>
+      <origin
+        xyz="-0.015714 -0.26191 -0.01436"
+        rpy="0 0 0" />
+      <mass
+        value="0.21595" />
+      <inertia
+        ixx="0.0043362"
+        ixy="5.9528E-08"
+        ixz="6.7246E-10"
+        iyy="8.6947E-05"
+        iyz="-9.425E-05"
+        izz="0.0044098" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://lle_description/meshes/left_leg.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://lle_description/meshes/left_leg.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="j_knee_l"
+    type="revolute">
+    <origin
+      xyz="0.409745245622558 -0.0144510791883973 0.42"
+      rpy="0 0 1.7105319934062" />
+    <parent
+      link="left_femur" />
+    <child
+      link="left_leg" />
+    <axis
+      xyz="0 0 1" />
+<limit effort="30" velocity="1.0" lower="-2" upper="2" />
+  </joint>
+  <link
+    name="left_foot">
+    <inertial>
+      <origin
+        xyz="0.04483 -0.064647 0.030053"
+        rpy="0 0 0" />
+      <mass
+        value="0.11695" />
+      <inertia
+        ixx="0.0003015"
+        ixy="0.00010272"
+        ixz="-5.6783E-05"
+        iyy="0.00040078"
+        iyz="6.5766E-05"
+        izz="0.00044579" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://lle_description/meshes/left_foot.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://lle_description/meshes/left_foot.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="j_foot_l"
+    type="revolute">
+    <origin
+      xyz="-0.000109500926683215 -0.403120459252478 -0.001"
+      rpy="3.14159265358979 0 -3.11597988929925" />
+    <parent
+      link="left_leg" />
+    <child
+      link="left_foot" />
+    <axis
+      xyz="0 0 -1" />
+<limit effort="30" velocity="1.0" lower="-2" upper="2" />
+  </joint>
+  <link
+    name="right_femur">
+    <inertial>
+      <origin
+        xyz="0.18167 1.059E-06 -0.0127"
+        rpy="0 0 0" />
+      <mass
+        value="0.29439" />
+      <inertia
+        ixx="0.00012141"
+        ixy="-5.9435E-08"
+        ixz="6.4283E-05"
+        iyy="0.0057442"
+        iyz="4.0889E-10"
+        izz="0.0058564" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://lle_description/meshes/right_femur.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://lle_description/meshes/right_femur.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="j_hip_r"
+    type="revolute">
+    <origin
+      xyz="-0.0407635604287585 -0.258877551691931 0.0426744558009468"
+      rpy="-1.5707963267949 1.39428159791336 -1.5707963267949" />
+    <parent
+      link="base_link" />
+    <child
+      link="right_femur" />
+    <axis
+      xyz="0 0 1" />
+<limit effort="30" velocity="1.0" lower="-2" upper="2" />
+  </joint>
+  <link
+    name="right_leg">
+    <inertial>
+      <origin
+        xyz="1.35E-06 -0.14184 -0.0053488"
+        rpy="0 0 0" />
+      <mass
+        value="0.21595" />
+      <inertia
+        ixx="0.0043362"
+        ixy="6.0023E-08"
+        ixz="6.8343E-10"
+        iyy="8.6947E-05"
+        iyz="-9.425E-05"
+        izz="0.0044098" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://lle_description/meshes/right_leg.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://lle_description/meshes/right_leg.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="j_knee_r"
+    type="revolute">
+    <origin
+      xyz="0.41 0 0"
+      rpy="3.14159265358979 0 -1.17038610495658" />
+    <parent
+      link="right_femur" />
+    <child
+      link="right_leg" />
+    <axis
+      xyz="0 0 -1" />
+<limit effort="30" velocity="1.0" lower="-2" upper="2" />
+  </joint>
+  <link
+    name="right_foot">
+    <inertial>
+      <origin
+        xyz="-0.044535 -0.065068 0.030513"
+        rpy="0 0 0" />
+      <mass
+        value="0.11504" />
+      <inertia
+        ixx="0.00029867"
+        ixy="-0.00010337"
+        ixz="5.7733E-05"
+        iyy="0.00039778"
+        iyz="6.4408E-05"
+        izz="0.00044294" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://lle_description/meshes/right_foot.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://lle_description/meshes/right_foot.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="j_foot_r"
+    type="revolute">
+    <origin
+      xyz="-0.000109417046429916 -0.403120465794648 -0.000999999999999904"
+      rpy="3.14159265358979 0 -2.94467192422229" />
+    <parent
+      link="right_leg" />
+    <child
+      link="right_foot" />
+    <axis
+      xyz="0 0 1" />
+<limit effort="30" velocity="1.0" lower="-2" upper="2" />
+  </joint>
+
+
+<transmission name="tran1">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="j_hip_r">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor1">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="tran2">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="j_hip_l">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor2">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+<transmission name="tran3">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="j_knee_r">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor3">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="tran4">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="j_knee_l">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor4">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+<transmission name="tran5">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="j_foot_l">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor5">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+</transmission>
+<transmission name="tran6">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="j_foot_r">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor6">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+</transmission>
+
+<gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      <robotNamespace>lle</robotNamespace>
+      <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+    </plugin>
+</gazebo>
+
+  <!-- Base Link -->
+  <gazebo reference="base_link">
+  <material>Gazebo/Red</material>
+  </gazebo>
+
+  <!-- Right Femur-->
+  <gazebo reference="right_femur">
+    <material>Gazebo/Green</material>
+  </gazebo>
+
+  <!-- Right Leg-->
+  <gazebo reference="right_leg">
+    <material>Gazebo/Blue</material>
+  </gazebo>
+
+  <!-- Right Foot -->
+  <gazebo reference="right_foot">
+    <material>Gazebo/Yellow</material>
+  </gazebo>
+
+ <!-- Left Femur-->
+<gazebo reference="left_femur">
+
+    <material>Gazebo/Green</material>
+  </gazebo>
+
+  <!-- Left Leg-->
+  <gazebo reference="left_leg">
+<material>Gazebo/Blue</material>
+  </gazebo>
+
+<!-- Left foot-->
+ <gazebo reference="left_foot">
+<material>Gazebo/Yellow</material>
+ </gazebo>
+
+
+</robot>
