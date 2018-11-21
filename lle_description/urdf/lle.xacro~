@@ -51,7 +51,7 @@
           <origin xyz="-0.025 0 0.00" rpy="3.14 1.57 0"/>
           <geometry>
             <mesh
-          filename="package://lle_description/meshes/rail.STL" />      
+          filename="package://lle_description/meshes/right_femur.STL" />      
           </geometry> 
 <material name="darkgray">
 <color rgba=".2 .2 .2 1"/>
@@ -61,7 +61,7 @@
               <origin xyz="-0.025 0 0.00" rpy="3.14 1.57 0"/>
               <geometry>
                  <mesh
-          filename="package://lle_description/meshes/rail.STL" />  
+          filename="package://lle_description/meshes/right_femur.STL" />  
           </geometry>  
 </collision>
 <inertial>
