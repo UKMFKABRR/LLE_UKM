@@ -19,5 +19,4 @@ j_foot_l_position_controller
     respawn="false" output="screen">
     <remap from="/joint_states" to="/lle/joint_states" />
   </node>
-
 </launch>

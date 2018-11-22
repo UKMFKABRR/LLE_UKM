@@ -1,10 +1,11 @@
 <launch>
 
   <rosparam file="$(find lle_control)/config/lle_control.yaml" command="load"/>
+  <rosparam file="$(find lle_control)/config/lle_control_effort.yaml" command="load"/>
 
 <!-- load the controllers -->
   <node name="lle_control" pkg="controller_manager" type="spawner" respawn="false"
-	output="screen" ns="/lle" args=" joint_state_controller
+	output="screen" ns="/lle" args="--namespace=/lle joint_state_controller
 j_hip_r_position_controller
 j_hip_l_position_controller
 j_knee_r_position_controller
@@ -19,5 +20,4 @@ j_foot_l_position_controller
     respawn="false" output="screen">
     <remap from="/joint_states" to="/lle/joint_states" />
   </node>
-
 </launch>

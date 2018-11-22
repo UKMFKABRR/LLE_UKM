@@ -8,29 +8,29 @@ lle:
   j_hip_r_position_controller:
     type: effort_controllers/JointPositionController
     joint: j_hip_r
-    pid: {p: 100.0, i: 0.01, d: 10.0}
+    pid: {p: 6.9829e+04, i: 208.4654, d: 82.7011}
 
   j_knee_r_position_controller:
     type: effort_controllers/JointPositionController
     joint: j_knee_r
-    pid: {p: 100.0, i: 0.01, d: 10.0}
+    pid: {p: 178.6448, i: 191.1836, d:  -0.1283}
 
   j_hip_l_position_controller:
     type: effort_controllers/JointPositionController
     joint: j_hip_l
-    pid: {p: 100.0, i: 0.01, d: 10.0}
+    pid: {p: 76.6448, i: 193.4046, d: 1.8275}
 
   j_knee_l_position_controller:
     type: effort_controllers/JointPositionController
     joint: j_knee_l
-    pid: {p: 100.0, i: 0.01, d: 10.0}
+    pid: {p: 19.2024, i: 37.0707, d: 11.2986}
 
   j_foot_l_position_controller:
     type: effort_controllers/JointPositionController
     joint: j_foot_l
-    pid: {p: 1, i: 0.0, d: 0}
+    pid: {p: 1, i: 0.0, d: 0.0}
 
   j_foot_r_position_controller:
     type: effort_controllers/JointPositionController
     joint: j_foot_r
-    pid: {p: 1, i: 0.0, d: 0}
+    pid: {p: 1, i: 0.0, d: 0.0}
