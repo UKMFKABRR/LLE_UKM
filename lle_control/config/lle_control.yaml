@@ -8,7 +8,7 @@ lle:
   j_hip_r_position_controller:
     type: effort_controllers/JointPositionController
     joint: j_hip_r
-    pid: {p: 6.9829e+04, i: 208.4654, d: 82.7011}
+    pid: {p: 76.6448, i: 193.4046, d: 1.8275}
 
   j_knee_r_position_controller:
     type: effort_controllers/JointPositionController
